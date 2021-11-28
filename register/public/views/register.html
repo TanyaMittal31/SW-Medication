@@ -1,0 +1,139 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- bs4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+
+</head>
+
+<body>
+  <!-- {{>navbar}} -->
+  <div class="container">
+    <section id="register-form">
+      <form action="/register" method="post" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" id="fname" placeholder="Enter First name" name="fname" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" id="lname" placeholder="Enter Last name" name="lname" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Enter email-id" name="email" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <input type="tel" class="form-control" id="phone" placeholder="Enter Contact Number" name="phone"
+                required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <textarea class="form-control" id="address1" placeholder="Enter Address" name="address1" required
+                maxlength="70" rows="1"></textarea>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <input type="date" class="form-control" id="dob" placeholder="Enter Date of birth" name="dob" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="male" name="gender" value="male">
+                <label class="custom-control-label" for="male">Male</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="female" name="gender" value="female">
+                <label class="custom-control-label" for="female">Female</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="other" name="gender" value="other">
+                <label class="custom-control-label" for="other">Other</label>
+              </div>
+
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+                <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+
+        </div>
+        <!--  -->
+        <div class="row">
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember" required> I agree with <a href="#">Terms and
+                Conditions.</a>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Check this checkbox to continue.</div>
+            </label>
+          </div>
+
+        </div>
+        <!--  -->
+        <button type="submit" class="btn btn-primary" id="myBtn">Submit</button>
+
+      </form>
+    </section>
+
+  </div>
+
+  <!-- js files -->
+
+  <script src="../js/register.js"></script>
+
+  <!-- bs4 js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
