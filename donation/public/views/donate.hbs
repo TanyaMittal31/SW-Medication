@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bs4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/donate.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <section id="donate-form" class="donate-form">
+            <form action="/donate" method="post" class="needs-validation" novalidate>
+                <div class="row row1">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="fname" placeholder="Enter First name"
+                                name="fname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="lname" placeholder="Enter Last name"
+                                name="lname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="cemail" placeholder="Enter email-id"
+                                name="cemail" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="cphone" placeholder="Enter Contact Number"
+                                name="cphone" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <textarea class="form-control" id="caddress" placeholder="Enter Address" name="caddress"
+                                required maxlength="70" rows="1"></textarea>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="pname" placeholder="Enter Product Name"
+                                name="pname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="mfg">Manufacturing date : </label>
+                            <input type="date" class="form-control" id="mfg" placeholder="Enter Manufacturing date"
+                                name="mfg" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="exp">Expiry date : </label>
+                            <input type="date" class="form-control" id="exp" placeholder="Enter Expiry date" name="exp"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="price"
+                                placeholder="Enter Selling Price . For free enter 0" name="price" required
+                                data-toggle="tooltip" title="If donate for free enter 0">
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <!-- <label for="qty">Qty : </label> -->
+                            <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <textarea class="form-control" id="pdesc" placeholder="Enter Additional information"
+                                name="pdesc" required maxlength="200" rows="2"></textarea>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+               <div class="row donate">
+                <button type="submit" class="btn btn-primary" id="myBtn">Donate</button>
+
+               </div>
+
+            </form>
+        </section>
+
+    </div>
+
+    <!-- js -->
+    <script src="../js/validations.js"></script>
+
+    <!-- bs4 js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

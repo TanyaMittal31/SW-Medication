@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Donations</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bs4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/mydonations.css" type="text/css">
+</head>
+<body>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Mfg</th>
+            <th>Exp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.pname}}</td>
+                <td>{{this.qty}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.mfg}}</td>
+                <td>{{this.exp}}</td>
+                <td>
+                    <a href="#"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <!-- js -->
+    <script src="../js/validations.js"></script>
+
+    <!-- bs4 js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
