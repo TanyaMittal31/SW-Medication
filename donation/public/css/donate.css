@@ -22,6 +22,7 @@ body{
     /* border: 1px solid black; */
     box-shadow: 0 0 5px 1px rgb(134, 131, 131);
     margin-top: 18rem;
+    margin-bottom: 2rem;
 }
 .donate{
     text-align: center;
