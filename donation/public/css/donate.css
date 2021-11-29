@@ -8,9 +8,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.logo{
-    color: white;
-  }
+
   .navbar-custom{
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -18,7 +16,7 @@ body{
     background-color: #FF5C58;
     /* margin-bottom: 16rem; */
   }
-.donate-form{
+.register-form{
     /* border: 1px solid black; */
     box-shadow: 0 0 5px 1px rgb(134, 131, 131);
     margin-top: 18rem;
