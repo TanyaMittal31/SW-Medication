@@ -16,19 +16,28 @@ app.use(express.static(static_path));
 const static_path1 = path.join(__dirname + "/donation/public");
 app.use(express.static(static_path1));
 const static_path2 = path.join(__dirname + "/donation/public/views");
+app.use(express.static(static_path2));
+const static_path3 = path.join(__dirname + "/donation/public/images");
+app.use(express.static(static_path3));
+const static_path4 = path.join(__dirname + "/home/public");
+app.use(express.static(static_path4));
+
 app.set("view engines" , "hbs");
 app.set("views" , path.join(static_path2))
 
-app.get("/register" , (req, res) => {
+app.get("/home" , (req, res) => {
+    res.sendFile(__dirname + "/home/public/views/index.html");
+});
+app.get("/home/register" , (req, res) => {
     res.sendFile(__dirname + "/register/public/views/register.html");
 });
-app.get("/login" , (req, res) => {
+app.get("/home/login" , (req, res) => {
     res.sendFile(__dirname + "/register/public/views/login.html");
 });
-app.get("/adminlogin" , (req, res) => {
+app.get("/home/adminlogin" , (req, res) => {
     res.sendFile(__dirname + "/register/public/views/adminlogin.html");
 });
-app.get("/donate" , (req, res) => {
+app.get("/home/donate" , (req, res) => {
     res.render(__dirname + "/donation/public/views/donate.hbs");
 });
 app.get("/mydonations" , async(req, res) => {
