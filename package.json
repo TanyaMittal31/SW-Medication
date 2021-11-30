@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/TanyaMittal31/SW-Medication#readme",
   "dependencies": {
+    "alert": "^5.0.10",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.1",
     "express": "^4.17.1",
     "hbs": "^4.2.0",
+    "http": "0.0.1-security",
     "jquery": "^3.6.0",
     "mongoose": "^6.0.13",
     "nodemon": "^2.0.15"

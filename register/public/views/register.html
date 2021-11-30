@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
   <!-- css -->
-  <link rel="stylesheet" href="css/register.css" type="text/css">
+  <link rel="stylesheet" href="../css/register.css" type="text/css">
 
 </head>
 
 <body>
   <!-- {{>navbar}} -->
   <div class="container">
-    <section id="register-form">
+    <section id="register-form" class="register-form">
       <form action="/register" method="post" class="needs-validation" novalidate>
         <div class="row">
           <div class="col">
@@ -120,6 +120,7 @@
 
         </div>
         <!--  -->
+        <div class="row register"></div>
         <button type="submit" class="btn btn-primary" id="myBtn">Register</button>
 
       </form>

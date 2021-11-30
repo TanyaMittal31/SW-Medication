@@ -15,6 +15,15 @@
   </head>
 
   <body>
+<!--  -->
+<!-- <script>
+if(success != ''){
+<div class="alert alert-success">
+    <strong>Success!</strong> Login Successful..
+  </div>
+}
+</script> -->
+    <!--  -->
     <div>
       <a href="http://localhost:3000/home"> &lt;- Back to home page</a>
     </div>
@@ -24,7 +33,7 @@
                   <div class="col-md-6">
                       <div class="myLeftCtn">
                           
-                        <form class="needs-validation text-center" novalidate method="post">
+                        <form class="needs-validation text-center" novalidate method="post" action="/login">
                             <header>Login</header>
                             <div class="form-group">
                                 
@@ -66,7 +75,9 @@
                       <div class="myRightCtn">
                           <div class="box"><header>Hello Users!</header>
                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo optio debitis veritatis, accusamus culpa maiores voluptates porro necessitatibus amet in! Consequuntur facilis enim ipsum assumenda porro accusamus cupiditate. Officiis, nam.</p>
-                          <input type="button" class="butt_out" value="Create Account" onclick="windows.location.href='http://localhost:3000/home/register';" />
+                          <!-- <input type="button" class="butt_out" value="Create Account"/> -->
+                          <!-- <button type="button" class="butt_out" value="Create Account">Create Account</button> -->
+                          <a href="http://localhost:3000/home/register" class="createA">Create Account</a>
                           </div>
  
                           

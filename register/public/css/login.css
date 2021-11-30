@@ -121,7 +121,7 @@ body{
     
 }
 
-.butt_out{
+.createA{
     background: transparent;
     color: #fff ;
     width: 120px;
@@ -131,17 +131,21 @@ body{
     -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0 , 0, 0.7);
     -moz-box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.7);
     box-shadow: 0px 10px 49px -14px rgba(0, 0 , 0, 0.7);
+    margin-top: 2rem;
+}
+.createA a{
+    text-decoration: none;
 }
 
-.butt_out:hover {
-    border: 2px solid#eecbff
+.createA:hover {
+    border: 2px solid#eecbff;
+    text-decoration: none;
+    color: #fff;
  }
 
- .butt_out:focus{
+ .createA:focus{
      outline: none;
  }
-
-
 
 
 

@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
+const http = require('http');
+const alert = require("alert");
 const app = express();
 const port = process.env.PORT || 3000;
 require(__dirname + "/register/db/connect");
@@ -40,28 +42,53 @@ app.get("/home/adminlogin" , (req, res) => {
 app.get("/home/donate" , (req, res) => {
     res.render(__dirname + "/donation/public/views/donate.hbs");
 });
-app.get("/mydonations" , async(req, res) => {
-    try {
-        const email = req.body.cemail;
-        const phone = req.body.cphone;
-        const useremail = await Register.findOne({email:email});
-        registerInfo.find((err,docs) => {
-            if(useremail.phone === phone){
-                res.status(201).render("mydonations.hbs" , {
-                    list : docs
-                });
-            }
-            else{
-                res.send("Sorry No data Found");
-            }
-        });
-    } catch (error) {
-        res.status(400).send("invalid details");
-    }
+app.get("/home/contact" , (req, res) => {
+    res.sendFile(__dirname + "/home/public/views/contact.html");
 });
+// app.get("/home/mydonations" , async(req, res) => {
+//     try {
+//         const email = req.body.cemail;
+//         const phone = req.body.cphone;
+//         const useremail = await Register.findOne({email:email});
+//         registerInfo.find((err,docs) => {
+//             if(useremail.phone === phone){
+//                 res.status(201).render("mydonations.hbs" , {
+//                     list : docs
+//                 });
+//             }
+//             else{
+//                 res.send("Sorry No data Found");
+//             }
+//         });
+//     } catch (error) {
+//         res.status(400).send("invalid details");
+//     }
+// });
+// app.get("/home/adminlogin/view", async(req,res) => {
+//     try {
+//         const uname = req.body.uname;
+//         const password = req.body.pswd;
+//         const username = await Admin.findOne({uname:uname});
+//         if(username.pswd === password){
+//             // res.status(201).sendFile(__dirname + "/home/public/views/index.html");
+//             Donate.find((err,docs) => {
+//                 if(!err){
+//                     res.render(__dirname + "/donation/public/views/viewall.hbs")
+//                     list : docs
+//                 }
+//             });
+//         }
+//         else{
+//             res.send("invalid login details");
+//         }
+//     } catch (error) {
+//         console.log("invalid login details");
+//     }
+
+// });
 
 // create a new user in database
-app.post("/register" , async(req,res) => {
+app.post("/home/register" , async(req,res) => {
     try{
         const userReg = new Register({
             fname : req.body.fname,
@@ -74,7 +101,7 @@ app.post("/register" , async(req,res) => {
             pswd : req.body.pswd
         })
         const registered = await userReg.save();
-        res.status(201).sendFile(__dirname + "/register/public/views/success.html")
+        res.status(201).sendFile(__dirname + "/home/public/views/index.html")
     }
     catch(e){
         res.status(400).send(e);
@@ -83,16 +110,17 @@ app.post("/register" , async(req,res) => {
 
 // login validation
 
-app.post("/login" , async(req,res) => {
+app.post("/home/login" , async(req,res) => {
     try {
         const email = req.body.email;
         const password = req.body.pswd;
         const useremail = await Register.findOne({email:email});
         if(useremail.pswd === password){
-            res.status(201).sendFile(__dirname + "/register/public/views/success.html");
+            res.status(201).sendFile(__dirname + "/home/public/views/index.html");
         }
         else{
-            res.send("invalid login details");
+            // res.send("invalid login details");
+            res.send({warning : ''});
         }
     } catch (error) {
         console.log("invalid login details");
@@ -100,13 +128,13 @@ app.post("/login" , async(req,res) => {
 })
 
 // admin login validation
-app.post("/adminlogin" , async(req,res) => {
+app.post("/home/adminlogin" , async(req,res) => {
     try {
         const uname = req.body.uname;
         const password = req.body.pswd;
         const username = await Admin.findOne({uname:uname});
         if(username.pswd === password){
-            res.status(201).sendFile(__dirname + "/register/public/views/success.html");
+            res.status(201).sendFile(__dirname + "/home/public/views/index.html");
         }
         else{
             res.send("invalid login details");
@@ -117,7 +145,7 @@ app.post("/adminlogin" , async(req,res) => {
 })
 
 // donate details
-app.post("/donate" , async(req,res) => {
+app.post("/home/donate" , async(req,res) => {
     try{
         const donateDetails = new Donate({
             fname : req.body.fname,
@@ -142,6 +170,44 @@ app.post("/donate" , async(req,res) => {
 })
 
 // my donations page
+app.post("/home/mydonations" , async(req, res) => {
+    try {
+        const email = req.body.cemail;
+        const phone = req.body.cphone;
+        const useremail = await Register.findOne({email:email});
+        registerInfo.find((err,docs) => {
+            if(useremail.phone === phone){
+                res.status(201).render("mydonations.hbs" , {
+                    list : docs
+                });
+            }
+            else{
+                res.status(400).send("Sorry No data Found");
+            }
+        });
+    } 
+    // try{
+    //     const donateDetails = new Donate({
+    //         fname : req.body.fname,
+    //         lname : req.body.lname,
+    //         cemail : req.body.cemail,
+    //         cphone : req.body.cphone,
+    //         caddress : req.body.caddress,
+    //         pname : req.body.pname,
+    //         mfg : req.body.mfg,
+    //         exp : req.body.exp,
+    //         price : req.body.price,
+    //         qty : req.body.qty,
+    //         pdesc : req.body.pdesc
+            
+    //     })
+    //     const registered = await donateDetails.save();
+    //     res.status(201).send("donation successful");
+    // }
+    catch(e){
+        res.status(400).send(e);
+    }
+});
 
 app.listen(port , () => {
     console.log(`server is running at port ${port}`);
