@@ -72,24 +72,24 @@
 				</div>
 			</div>
 			<div class="form-contact">
-				<form>
+				<form method="post" action="/home/contact"> 
 					<div class="row">
 						<div class="col-md-6">
 							<div class="single-input">
 								<i class="fas fa-user"></i>
-								<input type="text" name="name" placeholder="ENTER YOUR NAME">
+								<input type="text" name="name" placeholder="ENTER YOUR NAME" id="name">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="single-input">
 								<i class="fas fa-envelope"></i>
-								<input type="text" name="email" placeholder="ENTER YOUR EMAIL">
+								<input type="text" name="email" placeholder="ENTER YOUR EMAIL" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="single-input">
 								<i class="fas fa-phone"></i>
-								<input type="text" name="phoneNumber" placeholder="ENTER YOUR PHONE NUMBER">
+								<input type="text" name="phoneNumber"  pattern="[9876]{1}[0-9]{9}" id="phone" placeholder="ENTER YOUR PHONE NUMBER">
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -106,7 +106,7 @@
 						</div>
 						<div class="col-12">
 							<div class="submit-input text-center">
-								<input type="submit" name="submit" value="SUBMIT NOW">
+								<input type="submit" name="submit" value="SUBMIT NOW" onclick="alert('Your message has been successfully delievered. We will update you soon within 24hrs.')">
 							</div>
 						</div>
 					</div>

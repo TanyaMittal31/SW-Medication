@@ -8,6 +8,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+.logo{
+    color: white;
+  }
 
   .navbar-custom{
     padding-top: 1rem;
@@ -35,6 +38,7 @@ body{
     font-size: 1.1rem;
     background-color: #FF5C58;
     color: white;
+    border: none;
 }
 .row1{
     padding-top: 0.7rem;

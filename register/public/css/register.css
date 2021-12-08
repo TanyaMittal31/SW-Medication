@@ -8,20 +8,28 @@ body{
     justify-content: center;
     align-items: center;
 }
-.register-form{
-<<<<<<< HEAD
-    box-shadow: 0 0 5px 1px rgb(134, 131, 131);
-    margin-top: 18rem;
-    margin-bottom: 2rem;
-=======
-    /* border: 1px solid black; */
-    box-shadow: 0 0 5px 1px rgb(134, 131, 131);
+.logo{
+    color: white;
+  }
+  .form-control{
+      height: 3rem;
+  }
+  .navbar-custom{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(7,7,7,0.5);
+    background-color: #FF5C58;
+    color: white;
+  }
+  form{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
 }
-.donate{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
->>>>>>> 61748671685dea1961ea8649a59e6ff0543dfd39
+.register-form{
+    box-shadow: 0 0 5px 1px rgb(134, 131, 131);
+    margin-top: 7rem;
+    margin-bottom: 2rem;
 }
 #myBtn{
     padding: 5px 10px;
@@ -29,12 +37,12 @@ body{
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 1.1rem;
-<<<<<<< HEAD
     background-color: #FF5C58;
     color: white;
-=======
+    border: none;
 }
-.row1{
-    padding-top: 1.5rem;
->>>>>>> 61748671685dea1961ea8649a59e6ff0543dfd39
+.register{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

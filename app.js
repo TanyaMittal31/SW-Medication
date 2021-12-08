@@ -45,47 +45,9 @@ app.get("/home/donate" , (req, res) => {
 app.get("/home/contact" , (req, res) => {
     res.sendFile(__dirname + "/home/public/views/contact.html");
 });
-// app.get("/home/mydonations" , async(req, res) => {
-//     try {
-//         const email = req.body.cemail;
-//         const phone = req.body.cphone;
-//         const useremail = await Register.findOne({email:email});
-//         registerInfo.find((err,docs) => {
-//             if(useremail.phone === phone){
-//                 res.status(201).render("mydonations.hbs" , {
-//                     list : docs
-//                 });
-//             }
-//             else{
-//                 res.send("Sorry No data Found");
-//             }
-//         });
-//     } catch (error) {
-//         res.status(400).send("invalid details");
-//     }
-// });
-// app.get("/home/adminlogin/view", async(req,res) => {
-//     try {
-//         const uname = req.body.uname;
-//         const password = req.body.pswd;
-//         const username = await Admin.findOne({uname:uname});
-//         if(username.pswd === password){
-//             // res.status(201).sendFile(__dirname + "/home/public/views/index.html");
-//             Donate.find((err,docs) => {
-//                 if(!err){
-//                     res.render(__dirname + "/donation/public/views/viewall.hbs")
-//                     list : docs
-//                 }
-//             });
-//         }
-//         else{
-//             res.send("invalid login details");
-//         }
-//     } catch (error) {
-//         console.log("invalid login details");
-//     }
-
-// });
+app.get("/home/team" , (req, res) => {
+    res.sendFile(__dirname + "/home/public/views/team.html");
+});
 
 // create a new user in database
 app.post("/home/register" , async(req,res) => {
@@ -186,24 +148,7 @@ app.post("/home/mydonations" , async(req, res) => {
             }
         });
     } 
-    // try{
-    //     const donateDetails = new Donate({
-    //         fname : req.body.fname,
-    //         lname : req.body.lname,
-    //         cemail : req.body.cemail,
-    //         cphone : req.body.cphone,
-    //         caddress : req.body.caddress,
-    //         pname : req.body.pname,
-    //         mfg : req.body.mfg,
-    //         exp : req.body.exp,
-    //         price : req.body.price,
-    //         qty : req.body.qty,
-    //         pdesc : req.body.pdesc
-            
-    //     })
-    //     const registered = await donateDetails.save();
-    //     res.status(201).send("donation successful");
-    // }
+    
     catch(e){
         res.status(400).send(e);
     }
