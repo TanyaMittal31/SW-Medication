@@ -29,6 +29,6 @@
     "http": "0.0.1-security",
     "jquery": "^3.6.0",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
