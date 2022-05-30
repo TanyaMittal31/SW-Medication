@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/registerInfo", {
+mongoose.connect("mongodb+srv://tanya:tanya3110@cluster0.nh4td.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser:true,
     useUnifiedTopology:true,
     // useCreateIndex:true
@@ -8,3 +8,6 @@ mongoose.connect("mongodb://localhost:27017/registerInfo", {
 }).catch((e) => {
     console.log("connection unsuccessful");
 })
+
+
+// mongodb+srv://tanya:<password>@cluster0.nh4td.mongodb.net/?retryWrites=true&w=majority
